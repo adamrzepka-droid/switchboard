@@ -18,18 +18,24 @@
     position: relative;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+  }
+  .sb-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     background-image: url('https://actionswitchboard.org/media/website/hero.jpg');
     background-size: cover;
     background-position: 38% center;
     filter: grayscale(100%) brightness(0.65) contrast(1.1);
-    pointer-events: none;
+    z-index: 0;
   }
   .sb-hero::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(15,15,15,0.15) 0%, rgba(15,15,15,0.45) 60%, rgba(15,15,15,0.72) 100%);
-    filter: none;
+    z-index: 1;
   }
   .sb-hero__content {
     position: absolute;
@@ -41,7 +47,6 @@
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
-    filter: none;
     margin-top: -8vh;
     pointer-events: none;
   }
