@@ -208,20 +208,8 @@
     var toolkitEl = document.querySelector('.sb-hero__link[href*="toolkit"]');
     var floralNav = document.querySelector('.sb-floral-nav');
     if (!toolkitEl || !floralNav) return;
-    var textNode = toolkitEl.firstChild;
-    var text = textNode ? textNode.textContent : '';
-    var ooStart = text.search(/oo/i);
-    var centerX;
-    if (ooStart >= 0) {
-      var range = document.createRange();
-      range.setStart(textNode, ooStart);
-      range.setEnd(textNode, ooStart + 2);
-      var ooRect = range.getBoundingClientRect();
-      centerX = ooRect.left + ooRect.width / 2;
-    } else {
-      var rect = toolkitEl.getBoundingClientRect();
-      centerX = rect.left + rect.width / 2;
-    }
+    var rect = toolkitEl.getBoundingClientRect();
+    var centerX = rect.left + rect.width / 2;
     floralNav.style.left = centerX + 'px';
     floralNav.style.transform = 'translate(-50%, -50%)';
   }
